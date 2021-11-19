@@ -1,15 +1,11 @@
 from django.db import models
 
 
-class Sing_in(models.Model):
-    email = models.CharField(max_lenght=40)
-    password = models.CharField(max_lenght=20)
-
-class Register(models.Model):
-    email = models.CharField(max_lenght=40)
-    password = models.CharField(max_lenght=20)
-    repeat_password = models.CharField(max_lenght=20)
-
+class Login(models.Model):
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    repeat_password = models.CharField(max_length=100)
+    # post = models.ForeignKey(related_name="login", on_delete=models.CASCADE)
 
 
 

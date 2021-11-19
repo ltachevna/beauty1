@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from .forms import RegisterForm
-from .forms import Sing_inForm
-# from django.contrib.auth import user
+from .forms import LoginForm
+
 
 def sing_in(request):
-    form = Sing_inForm()
+    form = LoginForm()
     if request.method == 'POST':
-        form = Sing_inForm(request.POST)
+        form = LoginForm(request.POST)
         if form.is_valid():
             pass
 
@@ -14,18 +13,18 @@ def sing_in(request):
         context = {
             "form": form
         }
-        return render(request, 'sing_in.html', context)
+        return render(request, 'home_page.html', context)
 
 def register(request):
-    form = RegisterForm()
+    form = LoginForm()
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = LoginForm(request.POST)
         if form.is_valid():
             pass
     elif request.method == 'GET':
         context = {
             "form": form
         }
-        return render(request, 'register.html', context) #вернуть главную страницу вместо регистрации
+        return render(request, 'home_page.html', context)
 
-# Create your views here.
+

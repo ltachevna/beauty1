@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     'beauty1',
     'home_page',
+    'login',
 
 
 ]
